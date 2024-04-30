@@ -1,7 +1,19 @@
 body {
   background-color: black;
+
 }
 
+
+
+
 h1 {
-  color: red
+  text-align:center;
+  color: red;
+  font-family: monospace;
+}
+
+
+#lien {
+  text-align:center;
+  color: black;
 }
