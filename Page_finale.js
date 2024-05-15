@@ -1,4 +1,4 @@
-var mot = "Vous avez bientot fini votre experience sur notre l'ARG nous esperons qu'il vous a plus, si oui n'ésitez pas à nous le faire savoir Crtl A";
+var message = "Vous allez bientôt pouvoir désinstaller ce virus : augmentez votre volume sonore et Ctrl+A";
 var letterCount = 0; // Compteur de lettres affichées
 var currentTitle = null; // Stocke la référence du titre actuel
 
@@ -31,18 +31,21 @@ function displayNewTitle(key) {
 
     // Vérifie si la touche pressée est une lettre
     if (/^[a-zA-Z]$/.test(key)) {
-        if (letterCount < mot.length) {
-            title.textContent = mot.substring(0, letterCount + 1); // Affiche les lettres jusqu'à letterCount inclus
+        if (letterCount < message.length) {
+            title.textContent = message.substring(0, letterCount + 1); // Affiche les lettres jusqu'à letterCount inclus
             letterCount++;
         } else {
-            title.textContent = mot;
+            title.textContent = message;
         }
     } else {
-        title.textContent = mot;
+        title.textContent = message;
     }
 
     document.body.appendChild(title);
 
     // Met à jour la référence du titre actuel
-    currentTitle = title;
+    if (title != message){
+      currentTitle = title;
+    }
+    
 }
